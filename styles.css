@@ -195,6 +195,33 @@ h1.title{
 }
 
 /*
+
+        Generated table stuffs
+
+*/
+
+.tableContainer {
+    background-color: #fff;
+    border-radius: 4px;
+    height:fit-content;
+    padding: 1rem 0 3rem 1rem;
+    display:flex;
+    flex-direction: column;
+ }
+ .tableContainer:empty {
+    display: none !important;
+ }
+ .tableDisplay span{
+    margin:2px;
+    display:block;
+ }
+
+
+
+
+
+
+/*
         media queries
 
 */

@@ -1,6 +1,6 @@
 let todoArray = [];
 
-const mainContainer = document.querySelector('.content');
+const mainContainer = document.querySelector('.list-cont');
 const header = document.querySelector("#title-input");
 const description = document.querySelector("#description-input");
 const add = document.querySelector("#add");
@@ -10,7 +10,7 @@ let tableParent, tableDisplay, todoCounter,
  todoDelete, todoDescription, todoTitle;
 
 //create a table parent
-window.onLoad = function(){
+window.onload = function(){
     tableParent= document.createElement('ul');
     tableParent.classList.add('tableContainer');
     mainContainer.appendChild(tableParent);
@@ -42,7 +42,8 @@ function createTodoTable() {
     todoDelete.classList.add('todoDelete');
 }
 
-function print(){
+function printArray(){
+    console.log('hi');
     tableParent.innerHTML = "";
 
     function removeElement(i){
@@ -53,8 +54,8 @@ function print(){
     todoArray.map((value, i) =>{
         createTodoTable ();
 
-        noteCounter.textContent = i+1;
-        todoTitle.innerText=value.heading;
+        todoCounter.textContent = i+1;
+        todoTitle.innerText = value.heading;
         todoDescription.innerText = value.content;
 
         tableDisplay.appendChild(todoCounter);
@@ -77,7 +78,7 @@ add.addEventListener("click", function () {
         tempObj.content=description.value;
 
         todoArray= [...todoArray, tempObj];
-        print();
+        printArray();
         tableParent.style.display ="block";
     } else{
         alert("Please, Enter your to-do title and description")
