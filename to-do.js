@@ -1,10 +1,10 @@
 let todoArray = [];
 
 const mainContainer = document.querySelector('.content');
-const header = querySelector("#title-input");
-const description = querySelector("#description-input");
-const add = querySelector("#add");
-const del = querySelector('.close');
+const header = document.querySelector("#title-input");
+const description = document.querySelector("#description-input");
+const add = document.querySelector("#add");
+const del = documment.querySelector('.close');
 
 let tableParent, tableDisplay, todoArray, todoCounter,
  todoDelete, todoDescription, todoTitle;
@@ -14,7 +14,12 @@ window.onLoad = function(){
     tableParent= document.createElement('ul');
     tableParent.classList.add('tableContainer');
     mainContainer.appendChild(tableParent);
-    //tableParent.style.display="none";
+    tableParent.style.display="none";
+}
+
+function reset () {
+    header.value = "";
+    description.value = "";
 }
 
 //
@@ -46,7 +51,7 @@ function print(){
     }
 
     todoArray.map((value, i) =>{
-        createTableData ();
+        createTodoTable ();
 
         noteCounter.textContent = i+1;
         todoTitle.innerText=value.heading;
