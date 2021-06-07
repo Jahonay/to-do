@@ -4,9 +4,9 @@ const mainContainer = document.querySelector('.content');
 const header = document.querySelector("#title-input");
 const description = document.querySelector("#description-input");
 const add = document.querySelector("#add");
-const del = documment.querySelector('.close');
+const del = document.querySelector('.close');
 
-let tableParent, tableDisplay, todoArray, todoCounter,
+let tableParent, tableDisplay, todoCounter,
  todoDelete, todoDescription, todoTitle;
 
 //create a table parent
@@ -77,7 +77,7 @@ add.addEventListener("click", function () {
         tempObj.content=description.value;
 
         todoArray= [...todoArray, tempObj];
-        printArray();
+        print();
         tableParent.style.display ="block";
     } else{
         alert("Please, Enter your to-do title and description")
